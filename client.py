@@ -1,9 +1,3 @@
-# client -----------------------> server
-#    LOGIN \r\n matt \r\n HASŁO \end
-# 1) serwer sprawdza poprawność komendy (LOGIN) -> \r\n -> login -> \r\n -> hasło -> \end
-# 2) serwer sprawdza czy w słowniku znajduje się user z takim hasłem
-# 3) Jeżeli 2: -> tak => odpowiada, -> nie => odpowiada ... <- 200.OK.\end, <- 404. BAD LOGIN.\end
-
 import socket
 from common import *
 
