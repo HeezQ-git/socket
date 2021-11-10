@@ -17,9 +17,11 @@ def server_client(client):
     args = data.split('\r\n')
 
     if args[0] == 'LOGIN':
-        if users[args[1]] == args[2]:
-            send_data(client, f'Zalogowano użytkownika o nazwie {args[1]}')
-        send_data(client, f'Podano nieprawidłowe dane logowania!')
+        try:
+            if users[args[1]] == args[2]:
+                send_data(client, f'Zalogowano użytkownika o nazwie {args[1]}')
+        except:
+            send_data(client, f'Podano nieprawidłowe dane logowania!')
     else:
         send_data(client, 'Nie ma takiej komendy!')
 
