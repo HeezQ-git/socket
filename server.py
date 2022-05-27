@@ -73,6 +73,8 @@ def server_client(client, addr):
                     send_response(client, 200, f"Successfully cleared chat between {params[2]} and {params[1]}.")
                 else:
                     send_response(client, 600, "There are no messages between given users.")
+        elif args[0] == 'userslist':
+            send_response(client, 200, f'Users: ' + ', '.join(users.keys()))
         else:
             send_response(client, 300, "Command doesn't exist")
     s.close()
