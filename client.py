@@ -69,6 +69,12 @@ if status_code == 200:
                 
                 status_code, status_message, data = get_split_response(data)
                 print(f'{status_message}:', data.replace('\end', ''))
+            elif cmd == 'userslist':
+                send_data(s, f"userslist\r\nsessionID:{sessionID}\r\n\r\n")
+                data = get_data(s)
+                
+                status_code, status_message, data = get_split_response(data)
+                print(f'{status_message}:', data.replace('\end', ''))
         except KeyboardInterrupt:
             print('CLOSING CONNECTION...')
             s.close()
