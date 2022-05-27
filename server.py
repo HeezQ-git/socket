@@ -5,6 +5,7 @@ from time import sleep
 import uuid
 
 users = {
+    # przykładowe dane
     'matt': 'admin',
     'wiktor': 'silnehaslo',
     'hubert': 'kasztany123'
